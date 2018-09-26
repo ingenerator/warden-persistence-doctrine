@@ -13,7 +13,7 @@
   ],
   "require": {
     "php": "^5.5||^7.0",
-    "ingenerator/warden-core": "^0.1||^0.2",
+    "ingenerator/warden-core": "^0.3",
     "doctrine/orm": "^2.5"
   },
   "require-dev": {

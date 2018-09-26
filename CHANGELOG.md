@@ -1,5 +1,6 @@
 ### Unreleased
 
+* Require 0.3 series of warden-core and update repository method names
 
 ### v0.1.1 (2018-03-13)
 

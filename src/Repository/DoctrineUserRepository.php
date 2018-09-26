@@ -40,12 +40,12 @@ class DoctrineUserRepository implements UserRepository
         $this->user_class = $config->getClassName('entity', 'user');
     }
 
-    public function loadByEmail($email)
+    public function findByEmail($email)
     {
         return $this->em->getRepository($this->user_class)->findOneBy(['email' => $email]);
     }
 
-    public function loadById($id)
+    public function load($id)
     {
         return $this->em->getRepository($this->user_class)->find($id);
     }
