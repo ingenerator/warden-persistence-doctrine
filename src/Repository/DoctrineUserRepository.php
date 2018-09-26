@@ -59,11 +59,16 @@ class DoctrineUserRepository implements UserRepository
     public function save(User $user)
     {
         try {
-            $this->em->persist($user);
-            $this->em->flush([$user]);
+            $this->doSave($user);
         } catch (UniqueConstraintViolationException $e) {
             throw DuplicateUserException::forEmail($user->getEmail());
         }
+    }
+
+    protected function doSave(User $user)
+    {
+        $this->em->persist($user);
+        $this->em->flush([$user]);
     }
 
     public function refresh(User $user)

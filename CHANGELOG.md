@@ -1,5 +1,7 @@
 ### Unreleased
 
+* Refactor DoctrineUserRepository to provide better extension point for custom
+  saving of entities (e.g. to add entities that need to be saved with the user).
 * Require 0.3 series of warden-core and update repository method names
 
 ### v0.1.1 (2018-03-13)
