@@ -12,6 +12,7 @@ use Doctrine\ORM\EntityManager;
 use Ingenerator\Warden\Core\Config\Configuration;
 use Ingenerator\Warden\Core\Entity\User;
 use Ingenerator\Warden\Core\Repository\DuplicateUserException;
+use Ingenerator\Warden\Core\Repository\UnknownUserException;
 use Ingenerator\Warden\Core\Repository\UserRepository;
 
 class DoctrineUserRepository implements UserRepository
@@ -42,12 +43,19 @@ class DoctrineUserRepository implements UserRepository
 
     public function findByEmail($email)
     {
-        return $this->em->getRepository($this->user_class)->findOneBy(['email' => $email]);
+        return $this->getRepo()->findOneBy(['email' => $email]);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function load($id)
     {
-        return $this->em->getRepository($this->user_class)->find($id);
+        if ($id AND $user = $this->getRepo()->find($id)) {
+            return $user;
+        }
+
+        throw UnknownUserException::forId($id);
     }
 
     public function newUser()
@@ -74,6 +82,14 @@ class DoctrineUserRepository implements UserRepository
     public function refresh(User $user)
     {
         $this->em->refresh($user);
+    }
+
+    /**
+     * @return \Doctrine\ORM\EntityRepository
+     */
+    protected function getRepo()
+    {
+        return $this->em->getRepository($this->user_class);
     }
 
 }
