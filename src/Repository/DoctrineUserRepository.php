@@ -12,6 +12,7 @@ use Doctrine\ORM\EntityManager;
 use Ingenerator\Warden\Core\Config\Configuration;
 use Ingenerator\Warden\Core\Entity\User;
 use Ingenerator\Warden\Core\Repository\DuplicateUserException;
+use Ingenerator\Warden\Core\Repository\UnknownUserException;
 use Ingenerator\Warden\Core\Repository\UserRepository;
 
 class DoctrineUserRepository implements UserRepository
@@ -40,14 +41,21 @@ class DoctrineUserRepository implements UserRepository
         $this->user_class = $config->getClassName('entity', 'user');
     }
 
-    public function loadByEmail($email)
+    public function findByEmail($email)
     {
-        return $this->em->getRepository($this->user_class)->findOneBy(['email' => $email]);
+        return $this->getRepo()->findOneBy(['email' => $email]);
     }
 
-    public function loadById($id)
+    /**
+     * {@inheritdoc}
+     */
+    public function load($id)
     {
-        return $this->em->getRepository($this->user_class)->find($id);
+        if ($id AND $user = $this->getRepo()->find($id)) {
+            return $user;
+        }
+
+        throw UnknownUserException::forId($id);
     }
 
     public function newUser()
@@ -59,16 +67,29 @@ class DoctrineUserRepository implements UserRepository
     public function save(User $user)
     {
         try {
-            $this->em->persist($user);
-            $this->em->flush([$user]);
+            $this->doSave($user);
         } catch (UniqueConstraintViolationException $e) {
             throw DuplicateUserException::forEmail($user->getEmail());
         }
     }
 
+    protected function doSave(User $user)
+    {
+        $this->em->persist($user);
+        $this->em->flush([$user]);
+    }
+
     public function refresh(User $user)
     {
         $this->em->refresh($user);
+    }
+
+    /**
+     * @return \Doctrine\ORM\EntityRepository
+     */
+    protected function getRepo()
+    {
+        return $this->em->getRepository($this->user_class);
     }
 
 }

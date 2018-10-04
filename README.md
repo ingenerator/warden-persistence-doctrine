@@ -3,7 +3,7 @@ using doctrine2.
 
 **Warden is under heavy development and not recommended for production use outwith inGenerator.**
 
-[![Build Status](https://travis-ci.org/ingenerator/warden-persistence-doctrine.svg?branch=0.1.x)](https://travis-ci.org/ingenerator/warden-persistence-doctrine)
+[![Build Status](https://travis-ci.org/ingenerator/warden-persistence-doctrine.svg?branch=0.2.x)](https://travis-ci.org/ingenerator/warden-persistence-doctrine)
 
 
 # Installing warden-persistence-doctrine
