@@ -1,5 +1,10 @@
 ### Unreleased
 
+### v1.0.0 (2019-04-04)
+
+* Ensure support on php7.2
+* Drop support for php5
+
 ### v0.2.0 (2018-10-04)
 
 * Throw UnknownUserException if attempting to load a user that doesn't exist 
