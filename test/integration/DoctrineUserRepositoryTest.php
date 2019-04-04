@@ -40,9 +40,9 @@ class DoctrineUserRepositoryTest extends UserRepositoryTest
         $config->setMetadataCacheImpl(new ArrayCache);
         $config->setAutoGenerateProxyClasses(FALSE);
         $config->setProxyNamespace('\\Warden\\Proxy');
-        $config->setProxyDir(sys_get_temp_dir());
+        $config->setProxyDir(\sys_get_temp_dir());
 
-        $this->db_name = uniqid('warden_test');
+        $this->db_name = \uniqid('warden_test');
 
         $this->em = EntityManager::create(
             [
