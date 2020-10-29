@@ -5,10 +5,10 @@
  */
 namespace Ingenerator\Warden\Persistence\Doctrine\Mapping;
 
-use Doctrine\Common\Persistence\Mapping\ClassMetadata;
-use Doctrine\Common\Persistence\Mapping\Driver\MappingDriver;
 use Doctrine\ORM\Mapping\ClassMetadataInfo;
 use Doctrine\ORM\Mapping\MappingException;
+use Doctrine\Persistence\Mapping\ClassMetadata;
+use Doctrine\Persistence\Mapping\Driver\MappingDriver;
 use Ingenerator\Warden\Core\Entity\SimpleUser;
 
 class WardenDoctrineMapping implements MappingDriver

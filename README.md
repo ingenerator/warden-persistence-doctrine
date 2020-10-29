@@ -3,9 +3,6 @@ using doctrine2.
 
 **Warden is under heavy development and not recommended for production use outwith inGenerator.**
 
-[![Build Status](https://travis-ci.org/ingenerator/warden-persistence-doctrine.svg?branch=0.2.x)](https://travis-ci.org/ingenerator/warden-persistence-doctrine)
-
-
 # Installing warden-persistence-doctrine
 
 This isn't in packagist yet : you'll need to add our package repository to your composer.json:
@@ -30,7 +27,7 @@ plans line up with our thinking and future roadmap.
 
 # Contributors
 
-This package has been sponsored by [inGenerator Ltd](http://www.ingenerator.com)
+This package has been sponsored by [inGenerator Ltd](https://www.ingenerator.com)
 
 * Andrew Coulton [acoulton](https://github.com/acoulton) - Lead developer
 

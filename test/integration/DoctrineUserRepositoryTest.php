@@ -31,7 +31,7 @@ class DoctrineUserRepositoryTest extends UserRepositoryTest
         );
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $config = new Configuration();
@@ -48,8 +48,9 @@ class DoctrineUserRepositoryTest extends UserRepositoryTest
             [
                 'driver'   => 'pdo_mysql',
                 'host'     => '127.0.0.1',
+                'port'     => getenv('MYSQL_PORT'),
                 'user'     => 'root',
-                'password' => '',
+                'password' => 'password',
                 'charset'  => 'utf8',
             ],
             $config
@@ -62,7 +63,7 @@ class DoctrineUserRepositoryTest extends UserRepositoryTest
         $tool->createSchema($this->em->getMetadataFactory()->getAllMetadata());
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->em->getConnection()->exec('DROP SCHEMA IF EXISTS '.$this->db_name);
     }
