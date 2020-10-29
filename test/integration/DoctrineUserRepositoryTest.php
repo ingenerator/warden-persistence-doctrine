@@ -48,8 +48,9 @@ class DoctrineUserRepositoryTest extends UserRepositoryTest
             [
                 'driver'   => 'pdo_mysql',
                 'host'     => '127.0.0.1',
+                'port'     => getenv('MYSQL_PORT'),
                 'user'     => 'root',
-                'password' => '',
+                'password' => 'password',
                 'charset'  => 'utf8',
             ],
             $config
