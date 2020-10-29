@@ -31,7 +31,7 @@ class DoctrineUserRepositoryTest extends UserRepositoryTest
         );
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $config = new Configuration();
@@ -62,7 +62,7 @@ class DoctrineUserRepositoryTest extends UserRepositoryTest
         $tool->createSchema($this->em->getMetadataFactory()->getAllMetadata());
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->em->getConnection()->exec('DROP SCHEMA IF EXISTS '.$this->db_name);
     }

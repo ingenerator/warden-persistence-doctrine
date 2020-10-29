@@ -7,10 +7,11 @@
 namespace test\unit\Ingenerator\Warden\Persistence\Doctrine\Mapping;
 
 
-use Doctrine\Common\Persistence\Mapping\Driver\MappingDriver;
+use Doctrine\Persistence\Mapping\Driver\MappingDriver;
 use Ingenerator\Warden\Persistence\Doctrine\Mapping\WardenDoctrineMapping;
+use PHPUnit\Framework\TestCase;
 
-class WardenDoctrineMappingTest extends \PHPUnit\Framework\TestCase
+class WardenDoctrineMappingTest extends TestCase
 {
     public function test_it_is_initialisable_doctrine_mapping_driver()
     {
