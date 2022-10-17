@@ -7,12 +7,12 @@
 namespace test\integration\Ingenerator\Warden\Persistence\Doctrine\Repository;
 
 
-use Doctrine\Common\Cache\ArrayCache;
 use Doctrine\ORM\Configuration;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\SchemaTool;
 use Ingenerator\Warden\Persistence\Doctrine\Mapping\WardenDoctrineMapping;
 use Ingenerator\Warden\Persistence\Doctrine\Repository\DoctrineUserRepository;
+use Symfony\Component\Cache\Adapter\ArrayAdapter;
 use test\integration\Ingenerator\Warden\Core\Repository\UserRepositoryTest;
 
 class DoctrineUserRepositoryTest extends UserRepositoryTest
@@ -37,7 +37,7 @@ class DoctrineUserRepositoryTest extends UserRepositoryTest
         $config = new Configuration();
         $driver = new WardenDoctrineMapping;
         $config->setMetadataDriverImpl($driver);
-        $config->setMetadataCacheImpl(new ArrayCache);
+        $config->setMetadataCache(new ArrayAdapter());
         $config->setAutoGenerateProxyClasses(FALSE);
         $config->setProxyNamespace('\\Warden\\Proxy');
         $config->setProxyDir(\sys_get_temp_dir());
