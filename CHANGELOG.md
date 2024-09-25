@@ -1,5 +1,11 @@
 ### Unreleased
 
+### v2.0.0 (2024-09-25)
+
+* Drop support for PHP 8.0 & PHP 8.1
+* Support PHP 8.3
+* Support warden-core ^2.0
+
 ### v1.2.0 (2022-10-17)
 
 * Support PHP 8.1 and PHP 8.2

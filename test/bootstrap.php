@@ -10,4 +10,4 @@ $mock_loader->addPsr4('test\\integration\\Ingenerator\\Warden\\Persistence\\Doct
 
 $mock_loader->register();
 
-require_once __DIR__.'/../vendor/ingenerator/warden-core/test/integration/Repository/UserRepositoryTest.php';
+require_once __DIR__.'/../vendor/ingenerator/warden-core/test/integration/Repository/UserRepositoryTestCase.php';
