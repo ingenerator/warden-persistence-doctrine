@@ -13,9 +13,9 @@ use Doctrine\ORM\Tools\SchemaTool;
 use Ingenerator\Warden\Persistence\Doctrine\Mapping\WardenDoctrineMapping;
 use Ingenerator\Warden\Persistence\Doctrine\Repository\DoctrineUserRepository;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
-use test\integration\Ingenerator\Warden\Core\Repository\UserRepositoryTest;
+use test\integration\Ingenerator\Warden\Core\Repository\UserRepositoryTestCase;
 
-class DoctrineUserRepositoryTest extends UserRepositoryTest
+class DoctrineUserRepositoryTest extends UserRepositoryTestCase
 {
     /**
      * @var EntityManager
