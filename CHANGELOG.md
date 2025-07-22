@@ -1,5 +1,10 @@
 ### Unreleased
 
+### v2.1.0 (2025-07-22)
+
+* Support PHP 8.4
+* Drop support for symfony cache 5 & 6
+
 ### v2.0.0 (2024-09-25)
 
 * Drop support for PHP 8.0 & PHP 8.1
