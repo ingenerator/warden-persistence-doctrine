@@ -4,7 +4,7 @@
  * @licence   proprietary
  */
 
-namespace test\integration\Ingenerator\Warden\Persistence\Doctrine\Repository;
+namespace test\integration\Ingenerator\Warden\Persistence\Doctrine;
 
 
 use Doctrine\ORM\Configuration;
@@ -13,7 +13,6 @@ use Doctrine\ORM\Tools\SchemaTool;
 use Ingenerator\Warden\Persistence\Doctrine\Mapping\WardenDoctrineMapping;
 use Ingenerator\Warden\Persistence\Doctrine\Repository\DoctrineUserRepository;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
-use test\integration\Ingenerator\Warden\Core\Repository\UserRepositoryTestCase;
 
 class DoctrineUserRepositoryTest extends UserRepositoryTestCase
 {
