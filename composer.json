@@ -19,8 +19,8 @@
   "require": {
     "php": "~8.4.0 || ~8.5.0 || ~8.6.0",
     "ingenerator/warden-core": "^2.0",
-    "doctrine/orm": "^2.13.3",
-    "symfony/cache": "^7.3"
+    "doctrine/orm": "^2.20.14",
+    "symfony/cache": "^7.3 || ^8.1"
   },
   "conflict": {
     "doctrine/dbal": "<3.0"
